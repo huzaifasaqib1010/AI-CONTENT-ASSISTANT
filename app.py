@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide",
 )
 
-DEFAULT_MODEL = "openai/gpt-oss-20b"
+DEFAULT_MODEL = "openai/gpt-oss-120b"
 
 
 # ---------------------------------------------------------
