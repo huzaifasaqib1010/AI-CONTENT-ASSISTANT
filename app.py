@@ -181,7 +181,7 @@ with st.sidebar:
     "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
 ]
-        ],
+        
         index=0,
         help="Use the available Groq model you have access to.",
     )
