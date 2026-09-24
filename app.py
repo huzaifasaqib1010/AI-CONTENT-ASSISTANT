@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide",
 )
 
-DEFAULT_MODEL = "llama-3.1-8b-instant"
+DEFAULT_MODEL = "openai/gpt-oss-20b"
 
 
 # ---------------------------------------------------------
@@ -153,14 +153,8 @@ def generate_content(
     response = client.chat.completions.create(
         model=model,
         messages=[
-            {
-                "role": "system",
-                "content": (
-                    "You are an expert social-media copywriter. "
-                    "Follow the requested output format exactly."
-                ),
-            },
-            {"role": "user", "content": prompt},
+               {"role": "system", "content": "..."},
+               {"role": "user", "content": prompt},
         ],
         temperature=0.8,
         max_tokens=1800,
@@ -183,9 +177,10 @@ with st.sidebar:
 
     model = st.selectbox(
         "Groq Model",
-        options=[
-            "llama-3.1-8b-instant",
-            "llama-3.3-70b-versatile",
+     options=[
+    "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b",
+]
         ],
         index=0,
         help="Use the available Groq model you have access to.",
